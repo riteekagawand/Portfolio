@@ -13,11 +13,17 @@ const Page = () => {
       <Navbar />
       <div id="Home" className="h-screen flex flex-col justify-center items-center text-white">
         <div className="flex flex-col md:flex-row items-center">
-          <div className='md:mr-10 ml-[120px]'>
-            <div className='w-[450px] h-[450px] mt-11 rounded-full overflow-hidden shadow-[0_0_4px_2px_rgba(179,54,255,1)] transition-shadow duration-300 hover:shadow-[0_0_12px_6px_rgba(179,54,255,0.8)]'>
-              
-            </div>
-          </div>
+        <div className='md:mr-10 ml-[120px]'>
+        <div className='w-[450px] h-[450px] mt-11 rounded-full overflow-hidden shadow-[0_0_4px_2px_rgba(179,54,255,1)] transition-shadow duration-300 hover:shadow-[0_0_12px_6px_rgba(179,54,255,0.8)]'>
+        <Image
+      src="/images/meee.jpg" // Correct path
+      alt="Description of the image"
+      width={600}
+      height={600}
+    />
+        </div>
+        </div>
+
           <div className='md:ml-10 mt-10 md:mt-0'>
             <div className='flex text-[45px] md:text-[65px] font-bold justify-end mr-11 mt-20'>
               <div>I AM</div>
