@@ -2,6 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
+/* styles/globals.css */
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('/fonts/BebasNeue-Regular.woff2') format('woff2'),
+       url('/fonts/BebasNeue-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+/* Add this to your globals.css or a CSS module */
+.icon-container {
+  position: relative;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Apply default styles */
+.icon {
+  color: white; /* Default color */
+  transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+/* Hover effect for glowing icon */
+.icon-container:hover .icon {
+  filter: brightness(1.5) drop-shadow(0 0 10px rgba(179, 54, 255, 0.6)); /* Glow effect */
+  z-index: 1;
+}
+
+/* Make sure all icons are visible at default */
+.icon-container .icon {
+  opacity: 1; /* Default opacity */
+}
+
+/* Fade out icons not being hovered */
+.icon-container:hover ~ .icon {
+  opacity: 0.3; /* Fade effect */
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -24,10 +77,27 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  overflow-y: scroll; /* Enable scrolling */
+  -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
+  scrollbar-width: none;  /* Hide scrollbar in Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;  /* Hide scrollbar in WebKit browsers */
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.navbar-shadow {
+  @apply shadow-md;
+  box-shadow: 0 4px 6px rgba(179, 54, 255, 0.3), 0 2px 4px rgba(179, 54, 255, 0.2);
+}
+
+.navbar-link-shadow {
+  @apply shadow-sm;
+  box-shadow: 0 1px 2px rgba(179, 54, 255, 0.3);
 }
